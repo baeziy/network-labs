@@ -1,3 +1,6 @@
+# NAME: Muhammad Mustafa Kamal Malik
+# Roll# 241610047
+
 from socket import *
 serverPort = 12000
 serverSocket = socket(AF_INET, SOCK_DGRAM)
@@ -42,5 +45,5 @@ def loopMessage(message: str) -> str:
 while 1:
     message, clientAddress = serverSocket.recvfrom(2048)
     # print("Message received from %s port %s"%(clientAddress[0],clientAddress[1]))
-    modifiedMessage = loopMessage(message.decode())
+    modifiedMessage = loopMessage(message.decode().upper())
     serverSocket.sendto(modifiedMessage.encode(), clientAddress)
